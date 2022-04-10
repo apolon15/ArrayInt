@@ -21,16 +21,34 @@ public class ArrayInt implements IMath, Isort {
         array.add(num);
         return true;
     }
+    public boolean replace(int index,int number){
+        array.add(index,number);
+        return true;
+    }
 
     @Override
-    public float avg(ArrayList<Integer> arrayList) {
-        float result = 0;
-        arrayList.toArray();
-        for (int i = 0; i <= arrayList.size() - 1; i++) {
-            int x = arrayList.get(i);
+    public int max() {
+        System.out.println("Максимальный эл-т массива :" );
+        return Collections.max(array);
+
+    }
+
+    @Override
+    public int min() {
+        System.out.println("Минимальный эл-т массива :" );
+        return Collections.min(array);
+    }
+
+    @Override
+    public float avg() {
+
+           float result = 0;
+        array.toArray();
+        for (int i = 0; i <= array.size() - 1; i++) {
+            int x = array.get(i);
             result += x;
-        }
-        return result / arrayList.size();
+        }System.out.println("Среднее значение  массива :" );
+        return result / array.size();
     }
 
     @Override
@@ -42,15 +60,18 @@ public class ArrayInt implements IMath, Isort {
 
 
     @Override
-    public void sortAsc(ArrayList<Integer> arrayList) {
-        Collections.sort(arrayList);
-    //    System.out.println(arrayList);
+    public void sortAsc() {
+        Collections.sort(array);
+        System.out.println("Отортирован массив по возрастанию:" );
+        System.out.println(array);
     }
 
     @Override
-    public void sortDesc(ArrayList<Integer> arrayList) {
-        Collections.sort(arrayList);
-        Collections.reverse(arrayList);
-     //   System.out.println(arrayList);
+    public void sortDesc() {
+        Collections.sort(array);
+        Collections.reverse(array);
+        System.out.println("Отортирован массив по убыванию:" );
+        System.out.println(array);
     }
 }
+
